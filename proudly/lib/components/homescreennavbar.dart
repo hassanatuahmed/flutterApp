@@ -6,6 +6,9 @@ import 'package:proudly/components/sidebar_button.dart';
 import '../constants.dart';
 
 class HomeScreenNavBar extends StatelessWidget {
+  HomeScreenNavBar({@required this.triggerAnimation});
+
+  final Function triggerAnimation;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +16,9 @@ class HomeScreenNavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SidebarButton(),
+          SidebarButton(
+            triggerAnimation:triggerAnimation,
+          ),
           SearchFieldWidget(),
 
           Icon(
@@ -22,7 +27,7 @@ class HomeScreenNavBar extends StatelessWidget {
           ),
 
           SizedBox(
-            height: 16,
+            height: 10,
           ),
           CircleAvatar(
             radius: 18.0,

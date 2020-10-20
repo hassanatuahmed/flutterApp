@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proudly/components/cards/recent_course_card.dart';
+import 'package:proudly/main.dart';
 import 'package:proudly/models/course.dart';
+import 'package:proudly/screens/course_screen.dart';
 
 class RecentCourseList extends StatefulWidget{
 
@@ -43,11 +45,20 @@ class _RecentCourseListState extends State<RecentCourseList>{
           height: 320,
           child: PageView.builder(
             itemBuilder: (context, index) {
-              return Opacity(
-                opacity: currentPage == index ? 1.0 : 0.5,
+              return GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (
+                          context)=>CourseScreen(course: recentCourses[index],),
+                  fullscreenDialog: true),
+                  );
+                },
+                child: Opacity(
+                  opacity: currentPage == index ? 1.0 : 0.5,
 
-                child: RecentCourseCard(
-                  course: recentCourses[index],
+                  child: RecentCourseCard(
+                    course: recentCourses[index],
+                  ),
                 ),
               );
             },

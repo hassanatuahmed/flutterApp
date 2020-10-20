@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proudly/components/sidebar_row.dart';
 
 import 'package:proudly/main.dart';
 import 'package:proudly/constants.dart';
@@ -46,18 +47,18 @@ class SidebarScreen extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height * 0.08,),
             SidebarRow(
                 item: sidebarItem[0]),
-            SizedBox(height: 32,),
+            SizedBox(height: 20,),
             SidebarRow(
               item: sidebarItem[1],
             ),
-            SizedBox(height: 32,),
+            SizedBox(height: 20,),
             SidebarRow(
                 item: sidebarItem[2]),
-            SizedBox(height: 32,),
+            SizedBox(height: 20,),
             SidebarRow(
               item: sidebarItem[3],
             ),
-            SizedBox(height: 32,),
+            SizedBox(height: 20,),
             Spacer(),
             Row(
               children: [
@@ -66,7 +67,7 @@ class SidebarScreen extends StatelessWidget {
                   width: 17.0,
                 ),
                 SizedBox(
-                  width: 12.0,
+                  width: 5.0,
                 ),
                 Text(
                   "Log out",
